@@ -8,37 +8,11 @@ const NetworksProvider = ({ children }) => {
   const closeModal = () => setIsModalOpen(false);
 
   const networks = [
-    /*
-    {
-      name: 'BSC',
-      asset: 'BNB',
-      id: '56',
-      url: 'https://app.beefy.finance',
-    },
-    {
-      name: 'HECO',
-      asset: 'HT',
-      id: '128',
-      url: 'https://heco.beefy.finance',
-    },
-    {
-      name: 'AVALANCHE',
-      asset: 'AVAX',
-      id: '43114',
-      url: 'https://avax.beefy.finance',
-    },
     {
       name: 'POLYGON',
       asset: 'POLYGON',
       id: '137',
       url: 'https://polygon.beefy.finance',
-    },
-    */
-    {
-      name: 'FANTOM',
-      asset: 'FTM',
-      id: '250',
-      url: 'https://robo-vault.com',
     },
   ];
 

@@ -32,7 +32,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <Hidden xsDown>
             <img
               alt="ROBO"
-              src={require(`images/single-assets/robo-vault-logo.png`)}
+              src={require(`images/single-assets/dune-vault-logo-text.png`)}
               height={'160px'}
               className={classes.logo}
             />
@@ -40,7 +40,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <Hidden smUp>
             <img
               alt="ROBO"
-              src={require(`images/single-assets/robo-vault-logo.png`)}
+              src={require(`images/single-assets/dune-vault-logo-text.png`)}
               height={'160px'}
               className={classes.logo}
             />

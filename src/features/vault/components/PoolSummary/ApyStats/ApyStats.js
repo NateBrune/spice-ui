@@ -20,7 +20,7 @@ const ApyStats = ({ apy, isLoading = false, itemClasses, itemInnerClasses, statu
   values.apy24hrs = apy.apy24hrs;
   if (apy.apy3d) values.apy = apy.apy3d;
   else if (apy.apy2d) values.apy = apy.apy2d;
-  else values.apy = apy.apy1d;
+  else values.apy = apy.totalApy;
 
   const formatted = Object.fromEntries(
     Object.entries(values).map(([key, value]) => [key, formatApy(value)])

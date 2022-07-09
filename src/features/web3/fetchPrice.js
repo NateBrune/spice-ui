@@ -35,7 +35,7 @@ const fetchTokens = async () => {
   const cacheBuster = getApiCacheBuster();
 
   try {
-    const response = await axios.get(`https://api.robo-vault.com/prices?_=${cacheBuster}`);
+    const response = await axios.get(`http://localhost:3000/prices?_=${cacheBuster}`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -47,7 +47,7 @@ const fetchLPs = async () => {
   const cacheBuster = getApiCacheBuster();
 
   try {
-    const response = await axios.get(`https://api.robo-vault.com/prices?_=${cacheBuster}`);
+    const response = await axios.get(`http://localhost:3000/lps?_=${cacheBuster}`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -77,11 +77,11 @@ export function initializePriceCache() {
     oracleToIds.get(pool.oracle).push(pool.oracleId);
   });
 
-  // BIFI should always be fetched
-  if (!oracleToIds.has('tokens')) {
-    oracleToIds.set('tokens', []);
-  }
-  oracleToIds.get('tokens').push('BIFI');
+  // // BIFI should always be fetched
+  // if (!oracleToIds.has('tokens')) {
+  //   oracleToIds.set('tokens', []);
+  // }
+  // oracleToIds.get('tokens').push('BIFI');
 
   stakePools.forEach(pool => {
     if (!oracleToIds.has(pool.earnedOracle)) {

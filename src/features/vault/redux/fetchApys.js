@@ -16,13 +16,14 @@ export function fetchApys() {
 
     return new Promise((resolve, reject) => {
       const cacheBuster = getApiCacheBuster();
-      const url = `https://api.robo-vault.com/vault?_=${cacheBuster}`
-      const doRequest = axios.get(url, {crossDomain: true});
+      const url = `http://localhost:3000/apy/breakdown?_=${cacheBuster}`;
+      const doRequest = axios.get(url, { crossDomain: true });
 
       doRequest.then(
         res => {
-          const data = {}
-          res.data.forEach(e => data[e.vaultId] = e)
+          const data = {};
+          //res.data.forEach(e => data[e.vaultId] = e)
+          Object.entries(res.data).forEach(e => (data[e[0]] = e[1]));
           dispatch({
             type: VAULT_FETCH_APYS_SUCCESS,
             data: data,
